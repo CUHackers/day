@@ -2,12 +2,13 @@
 * @Author: Charlie Gallentine
 * @Date:   2018-10-05 15:34:33
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-01-15 19:35:29
+* @Last Modified time: 2019-01-15 19:46:45
 */
 
 const year = new Date().getYear() + 1900;
 const month = new Date().getMonth();
 const day = new Date().getDate();
+const endDay = new Date().getDate()+1;
 
 // const year = 2019;
 // const month = 0;
@@ -18,7 +19,7 @@ console.log(month);
 console.log(day);
 
 const eventStartTime = 8;
-const eventEndTime = 20;
+const eventEndTime = 14;
 const eventStartMinutes = 0;
 const eventEndMinutes = 0;
 
@@ -26,7 +27,7 @@ const eventEndMinutes = 0;
 // var endTime = (new Date(year, month, day, eventEndTime)).getTime();
 
 console.log(new Date(year, month, day, eventStartTime, eventStartMinutes));
-console.log(new Date(year, month, day, eventEndTime, eventEndMinutes));
+console.log(new Date(year, month, endDay, eventEndTime, eventEndMinutes));
 
 /*
   Gets the number of milliseconds since 1/1/1970
@@ -52,7 +53,7 @@ function startTime() {
   Return: integer, milliseconds since the epoch
  */
 function endTime() {
-  return (new Date(year, month, day, eventEndTime)).getTime();
+  return (new Date(year, month, endDay, eventEndTime)).getTime();
 }
 
 
@@ -441,21 +442,21 @@ function drawGrid() {
 
 
 // Event Has Ended!
-// var eventOver = [
-//     [G,_,_,G,_,_,G,G,_,_,_,G,G,_,G,_,G,_,_,G,G,G,_,_,_,G,G,_,_,G,_,_,G,_,G,G,G,_,G],
-//     [G,_,_,G,_,G,_,_,G,_,G,_,_,_,G,_,G,_,_,G,_,_,G,_,G,_,_,G,_,G,G,_,G,_,G,_,_,_,G],
-//     [G,G,G,G,_,G,G,G,G,_,G,_,_,_,G,G,_,_,_,G,_,_,G,_,G,_,_,G,_,G,G,G,G,_,G,G,G,_,G],
-//     [G,_,_,G,_,G,_,_,G,_,G,_,_,_,G,_,G,_,_,G,_,_,G,_,G,_,_,G,_,G,_,G,G,_,G,_,_,_,_],
-//     [G,_,_,G,_,G,_,_,G,_,_,G,G,_,G,_,G,_,_,G,G,G,_,_,_,G,G,_,_,G,_,_,G,_,G,G,G,_,G]
-// ];
-
 var eventOver = [
-    [G,G,G,_,_,G,_,_,G,_,G,G,G,G,_,_,G,_,G,_,G,_,_,G,G,_,_,G,G,G,G,_,G,_,_,_,_,G,G,G,_,_,G],
-    [G,_,_,G,_,G,_,_,G,_,G,_,_,_,_,_,G,_,G,_,G,_,G,_,_,G,_,G,_,_,G,_,G,_,_,_,_,G,_,G,G,_,G],
-    [G,G,G,_,_,G,G,G,G,_,G,G,G,G,_,_,G,_,G,_,G,_,G,_,_,G,_,G,G,G,_,_,G,_,_,_,_,G,_,_,G,_,G],
-    [G,_,_,G,_,_,_,_,G,_,G,_,_,_,_,_,G,_,G,_,G,_,G,_,_,G,_,G,_,G,G,_,G,_,_,_,_,G,_,G,G,_,_],
-    [G,G,G,_,_,G,G,G,G,_,G,G,G,G,_,_,G,G,G,G,G,_,_,G,G,_,_,G,_,_,G,_,G,G,G,G,_,G,G,G,_,_,G]
+    [G,_,_,G,_,_,G,G,_,_,_,G,G,_,G,_,G,_,_,G,G,G,_,_,_,G,G,_,_,G,_,_,G,_,G,G,G,_,G],
+    [G,_,_,G,_,G,_,_,G,_,G,_,_,_,G,_,G,_,_,G,_,_,G,_,G,_,_,G,_,G,G,_,G,_,G,_,_,_,G],
+    [G,G,G,G,_,G,G,G,G,_,G,_,_,_,G,G,_,_,_,G,_,_,G,_,G,_,_,G,_,G,G,G,G,_,G,G,G,_,G],
+    [G,_,_,G,_,G,_,_,G,_,G,_,_,_,G,_,G,_,_,G,_,_,G,_,G,_,_,G,_,G,_,G,G,_,G,_,_,_,_],
+    [G,_,_,G,_,G,_,_,G,_,_,G,G,_,G,_,G,_,_,G,G,G,_,_,_,G,G,_,_,G,_,_,G,_,G,G,G,_,G]
 ];
+
+// var eventOver = [
+//     [G,G,G,_,_,G,_,_,G,_,G,G,G,G,_,_,G,_,G,_,G,_,_,G,G,_,_,G,G,G,G,_,G,_,_,_,_,G,G,G,_,_,G],
+//     [G,_,_,G,_,G,_,_,G,_,G,_,_,_,_,_,G,_,G,_,G,_,G,_,_,G,_,G,_,_,G,_,G,_,_,_,_,G,_,G,G,_,G],
+//     [G,G,G,_,_,G,G,G,G,_,G,G,G,G,_,_,G,_,G,_,G,_,G,_,_,G,_,G,G,G,_,_,G,_,_,_,_,G,_,_,G,_,G],
+//     [G,_,_,G,_,_,_,_,G,_,G,_,_,_,_,_,G,_,G,_,G,_,G,_,_,G,_,G,_,G,G,_,G,_,_,_,_,G,_,G,G,_,_],
+//     [G,G,G,_,_,G,G,G,G,_,G,G,G,G,_,_,G,G,G,G,G,_,_,G,G,_,_,G,_,_,G,_,G,G,G,G,_,G,G,G,_,_,G]
+// ];
 
 
 function staticDrawEnd() {

@@ -2,7 +2,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2018-10-08 11:50:43
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-01-15 19:42:43
+* @Last Modified time: 2019-01-15 19:47:18
 */
 
 // var startTime() = (new Date(year, month, day, eventStartTime, eventStartMinutes)).getTime();
@@ -92,38 +92,38 @@ const schedule = [
   },
   {
     event: "Midnight Snack",
-    start: new Date(year, month, day+1),
-    end: new Date(year, month, day+1, 0, 30),
+    start: new Date(year, month, endDay),
+    end: new Date(year, month, endDay, 0, 30),
   },
   {
     event: "Yoga",
-    start: new Date(year, month, day+1, 1),
-    end: new Date(year, month, day+1, 1, 30),
+    start: new Date(year, month, endDay, 1),
+    end: new Date(year, month, endDay, 1, 30),
   },
   {
     event: "Breakfast",
-    start: new Date(year, month, day+1, 6),
-    end: new Date(year, month, day+1, 7),
+    start: new Date(year, month, endDay, 6),
+    end: new Date(year, month, endDay, 7),
   },
   {
     event: "Hacking ends",
-    start: new Date(year, month, day+1, 11),
-    end: new Date(year, month, day+1, 11),
+    start: new Date(year, month, endDay, 11),
+    end: new Date(year, month, endDay, 11),
   },
   {
     event: "DevPost closes",
-    start: new Date(year, month, day+1, 11, 30),
-    end: new Date(year, month, day+1, 11, 30),
+    start: new Date(year, month, endDay, 11, 30),
+    end: new Date(year, month, endDay, 11, 30),
   },
   {
     event: "Demos and Judging",
-    start: new Date(year, month, day+1, 12),
-    end: new Date(year, month, day+1, 13, 45),
+    start: new Date(year, month, endDay, 12),
+    end: new Date(year, month, endDay, 13, 45),
   },
   {
     event: "Closing Ceremony",
-    start: new Date(year, month, day+1, 14),
-    end: new Date(year, month, day+1, 15),
+    start: new Date(year, month, endDay, 14),
+    end: new Date(year, month, endDay, 15),
   },
 ];
 
