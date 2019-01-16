@@ -2,7 +2,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2018-10-08 11:50:43
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-01-15 19:47:18
+* @Last Modified time: 2019-01-15 19:52:39
 */
 
 // var startTime() = (new Date(year, month, day, eventStartTime, eventStartMinutes)).getTime();
@@ -152,7 +152,7 @@ function set_memo()
 	{
 		memo.innerHTML = "<h1 class='mem_message'><strong>Countdown to demos</strong></h1><img id='top_bug' \
           src='./resources/CUhackit_bw_small.svg' \
-          alt='HelloWorld'/>";
+          alt='CUhackit'/>";
 	}
 	else
 	{
@@ -173,40 +173,28 @@ function set_events()
   events.innerHTML = "";
   var html_string = "";
 
-  if (false)
+  for (var i = 0; i < schedule.length; i++)
   {
-    html_string = 
-      '<div>  \
-        <img  \
-          src="./resources/HelloWorld_color_logo.svg" \
-          alt="HelloWorld"/>  \
-      </div>';
-  }
-  else
-  {
-    for (var i = 0; i < schedule.length; i++)
-    {
-      if ( count < 4 &&
-        currentTime() >= schedule[i].start 
-        && currentTime() <= schedule[i].end)
-      {
-        html_string += 
-        `<div class="event"> \
-            <h1 class="event_title"><strong>${schedule[i].event}</strong></h1> \
-            <p  class="event_time">${(schedule[i].start.getHours() > 12 ? schedule[i].start.getHours()%12 : schedule[i].start.getHours()) +":"+addZero(schedule[i].start.getMinutes())}-${(schedule[i].end.getHours() > 12 ? schedule[i].end.getHours()%12 : schedule[i].end.getHours())+":"+addZero(schedule[i].end.getMinutes())}</p> \
-          </div>`;
-          count ++;
-      }
-    }
-    if (progress.before())
+    if ( count < 4 &&
+      currentTime() >= schedule[i].start 
+      && currentTime() <= schedule[i].end)
     {
       html_string += 
-        '<div>  \
-            <img  \
-              src="./resources/CUhackit_bw.svg" \
-              alt="CUhackit"/>  \
-          </div>';
+      `<div class="event"> \
+          <h1 class="event_title"><strong>${schedule[i].event}</strong></h1> \
+          <p  class="event_time">${(schedule[i].start.getHours() > 12 ? schedule[i].start.getHours()%12 : schedule[i].start.getHours()) +":"+addZero(schedule[i].start.getMinutes())}-${(schedule[i].end.getHours() > 12 ? schedule[i].end.getHours()%12 : schedule[i].end.getHours())+":"+addZero(schedule[i].end.getMinutes())}</p> \
+        </div>`;
+        count ++;
     }
+  }
+  if (progress.before())
+  {
+    html_string += 
+      '<div>  \
+          <img  \
+            src="./resources/CUhackit_bw.svg" \
+            alt="CUhackit"/>  \
+        </div>';
   }
 
   document.getElementById("events").innerHTML = html_string;
@@ -234,7 +222,7 @@ function set_upcoming()
             ${(schedule[i].start.getHours() > 12 ? schedule[i].start.getHours()%12 : 
               schedule[i].start.getHours())
               +":"+
-              addZero(schedule[i].start.getMinutes())}-${((schedule[i].end.getHours() != schedule[i].start.getHours() && schedule[i].end.getMinutes() != schedule[i].start.getMinutes()) ? (schedule[i].end.getHours() > 12 ? schedule[i].end.getHours()%12 : schedule[i].end.getHours())+":"+addZero(schedule[i].end.getMinutes()) : '>')}</p> \
+              addZero(schedule[i].start.getMinutes())}-${((schedule[i].end.getHours() != schedule[i].start.getHours() && schedule[i].end.getMinutes() != schedule[i].start.getMinutes()) ? (schedule[i].end.getHours() > 12 ? schedule[i].end.getHours()%12 : schedule[i].end.getHours())+":"+addZero(schedule[i].end.getMinutes()) : ' ')}</p> \
         </div>`;
         count++;
       }
