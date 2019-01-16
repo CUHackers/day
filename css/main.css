@@ -1,0 +1,77 @@
+/*
+* @Author: Charlie Gallentine
+* @Date:   2018-10-05 15:40:42
+* @Last Modified by:   Charlie Gallentine
+* @Last Modified time: 2018-10-12 11:27:55
+*/
+
+* {
+	font-family: "Access Regular";
+	margin: 0;
+	padding: 0;
+}
+
+.section {
+	margin: 0 auto;
+	width: 50%;
+}
+
+#memo {
+	color: #FDB92E;
+	display: flex;
+	margin-top: 100px;
+	margin-bottom: 20px;
+	justify-content: space-between;
+}
+
+#clock {
+	width: 100%;
+	height: 10vw;
+	margin-bottom: 40px
+}
+
+#top_bug {
+	width: 250px;
+	margin-right: -14px;
+}
+
+.mem_message {
+	padding-top: 18px;
+	display: inline;
+	font-size: 56px;
+	z-index: 10;
+}
+
+.event {
+	align-items: flex-end;
+	background-color: #287767;
+	color: white;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 30px;
+}
+
+.event_title {
+	font-size:74px;
+	margin: auto 0;
+	padding: 20px 30px 0 30px;
+}
+
+.event_time {
+	font-size: 42px;
+	margin-right: 15px;
+	padding-bottom: 8px;
+}
+
+.upcoming_event {
+	background-color: #99BFB8;
+	align-items: flex-end;
+	color: white;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 30px;
+}
+
+.row {
+	border: 2px solid black;
+}
