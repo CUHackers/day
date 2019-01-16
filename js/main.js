@@ -2,7 +2,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2018-10-08 11:50:43
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-01-15 19:36:05
+* @Last Modified time: 2019-01-15 19:42:43
 */
 
 // var startTime() = (new Date(year, month, day, eventStartTime, eventStartMinutes)).getTime();
@@ -230,7 +230,11 @@ function set_upcoming()
         html_string += 
         `<div class="upcoming_event"> \
           <h1 class="event_title"><strong>${schedule[i].event}</strong></h1> \
-          <p class="event_time">${(schedule[i].start.getHours() > 12 ? schedule[i].start.getHours()%12 : schedule[i].start.getHours())+":"+addZero(schedule[i].start.getMinutes())}-${(schedule[i].end.getHours() > 12 ? schedule[i].end.getHours()%12 : schedule[i].end.getHours())+":"+addZero(schedule[i].end.getMinutes())}</p> \
+          <p class="event_time">
+            ${(schedule[i].start.getHours() > 12 ? schedule[i].start.getHours()%12 : 
+              schedule[i].start.getHours())
+              +":"+
+              addZero(schedule[i].start.getMinutes())}-${((schedule[i].end.getHours() != schedule[i].start.getHours() && schedule[i].end.getMinutes() != schedule[i].start.getMinutes()) ? (schedule[i].end.getHours() > 12 ? schedule[i].end.getHours()%12 : schedule[i].end.getHours())+":"+addZero(schedule[i].end.getMinutes()) : '>')}</p> \
         </div>`;
         count++;
       }
