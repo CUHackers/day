@@ -2,12 +2,16 @@
 * @Author: Charlie Gallentine
 * @Date:   2018-10-05 15:34:33
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2018-11-09 10:54:41
+* @Last Modified time: 2019-01-15 19:35:29
 */
 
 const year = new Date().getYear() + 1900;
 const month = new Date().getMonth();
 const day = new Date().getDate();
+
+// const year = 2019;
+// const month = 0;
+// const day = 26;
 
 console.log(year);
 console.log(month);
@@ -110,8 +114,8 @@ function getCurrentGradient() {
   	gridTextGradient.addColorStop(1, "#01a"); // make this a darker one!
   }
   else if (progress.during()) {
-  	gridTextGradient.addColorStop(0, "#FDB92E"); // old color here!
-  	gridTextGradient.addColorStop(1, "#FDB92E"); // make this a darker one!
+  	gridTextGradient.addColorStop(0, "#AAA"); // old color here!
+  	gridTextGradient.addColorStop(1, "#AAA"); // make this a darker one!
   }
   else {
   	gridTextGradient.addColorStop(0, "#FDB92E"); // old color here!

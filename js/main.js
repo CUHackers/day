@@ -2,7 +2,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2018-10-08 11:50:43
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2018-11-09 10:52:07
+* @Last Modified time: 2019-01-15 19:36:05
 */
 
 // var startTime() = (new Date(year, month, day, eventStartTime, eventStartMinutes)).getTime();
@@ -11,64 +11,119 @@ let count = 0;
 
 const schedule = [
   {
-    event: "HowToMentor",
-    start: new Date(year, month, day, 7, 30),
-    end: new Date(year, month, day, 8, 15),
-  },
-  {
-    event: "Breakfast",
-    start: new Date(year, month, day, 7, 30),
-    end: new Date(year, month, day, 9, 30),
-  },
-  {
-    event: "Registration",
-    start: new Date(year, month, day, 8),
-    end: new Date(year, month, day, 9),
-  },
-  {
-    event: "Opening",
+    event: "Mentor orientation",
     start: new Date(year, month, day, 8, 30),
     end: new Date(year, month, day, 9),
   },
   {
-    event: "Lunch",
-    start: new Date(year, month, day, 12),
-    end: new Date(year, month, day, 13, 30),
+    event: "Participant check-in",
+    start: new Date(year, month, day, 9),
+    end: new Date(year, month, day, 10, 30),
   },
   {
-    event: "Cup Stacking",
-    start: new Date(year, month, day, 14),
+    event: "Opening Ceremony",
+    start: new Date(year, month, day, 10, 30),
+    end: new Date(year, month, day, 11),
+  },
+  {
+    event: "HACKING BEGINS!",
+    start: new Date(year, month, day, 11),
+    end: new Date(year, month, day, 11),
+  },
+  {
+    event: "Workshops begin",
+    start: new Date(year, month, day, 11),
+    end: new Date(year, month, day, 11),
+  },
+  {
+    event: "Lunch",
+    start: new Date(year, month, day, 12),
+    end: new Date(year, month, day, 13),
+  },
+  {
+    event: "Smash Bros",
+    start: new Date(year, month, day, 13),
+    end: new Date(year, month, day, 14),
+  },
+  {
+    event: "Headshots",
+    start: new Date(year, month, day, 13),
     end: new Date(year, month, day, 15),
   },
   {
-    event: "Virtual Reality",
-    start: new Date(year, month, day, 15),
+    event: "Immersive Space opens",
+    start: new Date(year, month, day, 14),
+    end: new Date(year, month, day, 14),
+  },
+  {
+    event: "King of Pops",
+    start: new Date(year, month, day, 16),
+    end: new Date(year, month, day, 17),
+  },
+  {
+    event: "Lightning Pops",
+    start: new Date(year, month, day, 16),
     end: new Date(year, month, day, 17),
   },
   {
     event: "Dinner",
-    start: new Date(year, month, day, 17, 30),
-    end: new Date(year, month, day, 18, 30),
-  },
-  {
-    event: "Demo Setup",
     start: new Date(year, month, day, 18),
-    end: new Date(year, month, day, 18, 30),
-  },
-  {
-    event: "Demos",
-    start: new Date(year, month, day, 18, 30),
     end: new Date(year, month, day, 19),
   },
   {
-    event: "Closing",
-    start: new Date(year, month, day, 19, 30),
+    event: "Snake",
+    start: new Date(year, month, day, 19),
     end: new Date(year, month, day, 20),
   },
   {
-    event: "Goodbye",
+    event: "Cup Stacking",
     start: new Date(year, month, day, 20),
-    end: new Date(year, month, day, 21),
+    end: new Date(year, month, day, 20, 30),
+  },
+  {
+    event: "Sleep rooms",
+    start: new Date(year, month, day, 22),
+    end: new Date(year, month, day, 22),
+  },
+  {
+    event: "Mid-way hype",
+    start: new Date(year, month, day, 23),
+    end: new Date(year, month, day, 23),
+  },
+  {
+    event: "Midnight Snack",
+    start: new Date(year, month, day+1),
+    end: new Date(year, month, day+1, 0, 30),
+  },
+  {
+    event: "Yoga",
+    start: new Date(year, month, day+1, 1),
+    end: new Date(year, month, day+1, 1, 30),
+  },
+  {
+    event: "Breakfast",
+    start: new Date(year, month, day+1, 6),
+    end: new Date(year, month, day+1, 7),
+  },
+  {
+    event: "Hacking ends",
+    start: new Date(year, month, day+1, 11),
+    end: new Date(year, month, day+1, 11),
+  },
+  {
+    event: "DevPost closes",
+    start: new Date(year, month, day+1, 11, 30),
+    end: new Date(year, month, day+1, 11, 30),
+  },
+  {
+    event: "Demos and Judging",
+    start: new Date(year, month, day+1, 12),
+    end: new Date(year, month, day+1, 13, 45),
+  },
+  {
+    event: "Closing Ceremony",
+    start: new Date(year, month, day+1, 14),
+    end: new Date(year, month, day+1, 15),
   },
 ];
 
@@ -91,17 +146,17 @@ function set_memo()
   const memo = document.getElementById("memo");
 	if (progress.before())
 	{
-		memo.innerHTML = "<h1 class='mem_message'><strong>HelloWorld is loading...</strong></h1>";
+		memo.innerHTML = "<h1 class='mem_message'><strong>CUhackit is loading...</strong></h1>";
 	}
 	else if (progress.during())
 	{
 		memo.innerHTML = "<h1 class='mem_message'><strong>Countdown to demos</strong></h1><img id='top_bug' \
-          src='./resources/HelloWorld_bw_logo.svg' \
+          src='./resources/CUhackit_bw_small.svg' \
           alt='HelloWorld'/>";
 	}
 	else
 	{
-		memo.innerHTML = "<h1 class='mem_message'><strong>You done good kid.</strong></h1>";
+		memo.innerHTML = "<h1 class='mem_message'><strong>Hack Complete</strong></h1>";
 	}
 }
 
@@ -148,8 +203,8 @@ function set_events()
       html_string += 
         '<div>  \
             <img  \
-              src="./resources/HelloWorld_color_logo.svg" \
-              alt="HelloWorld"/>  \
+              src="./resources/CUhackit_bw.svg" \
+              alt="CUhackit"/>  \
           </div>';
     }
   }
@@ -204,7 +259,7 @@ function main() {
   	    drawNumbers();
   	}
     // drawGrid();
-  	setTimeout(function() { main(); }, 300);
+  	setTimeout(function() { main(); }, 400);
   }
   if (startTime() - currentTime() > -1000 && startTime() - currentTime() < 0)
   {

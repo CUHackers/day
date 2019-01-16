@@ -2,7 +2,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2018-10-05 15:40:42
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2018-10-12 11:27:55
+* @Last Modified time: 2019-01-15 19:03:55
 */
 
 * {
@@ -17,7 +17,7 @@
 }
 
 #memo {
-	color: #FDB92E;
+	color: black;
 	display: flex;
 	margin-top: 100px;
 	margin-bottom: 20px;
@@ -44,7 +44,7 @@
 
 .event {
 	align-items: flex-end;
-	background-color: #287767;
+	background-color: black;
 	color: white;
 	display: flex;
 	justify-content: space-between;
@@ -64,7 +64,7 @@
 }
 
 .upcoming_event {
-	background-color: #99BFB8;
+	background-color: #aaa;
 	align-items: flex-end;
 	color: white;
 	display: flex;
