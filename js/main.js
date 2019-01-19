@@ -2,7 +2,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2018-10-08 11:50:43
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-01-19 11:29:16
+* @Last Modified time: 2019-01-19 11:32:19
 */
 
 // var startTime() = (new Date(year, month, day, eventStartTime, eventStartMinutes)).getTime();
@@ -269,7 +269,7 @@ function main() {
   	    drawNumbers();
   	}
     // drawGrid();
-  	setTimeout(function() { main(); }, 400);
+  	setTimeout(function() { main(); }, 200);
   }
   if (startTime() - currentTime() > -1000 && startTime() - currentTime() < 0)
   {
