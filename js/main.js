@@ -2,7 +2,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2018-10-08 11:50:43
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-01-15 19:52:39
+* @Last Modified time: 2019-01-19 11:29:16
 */
 
 // var startTime() = (new Date(year, month, day, eventStartTime, eventStartMinutes)).getTime();
@@ -92,7 +92,7 @@ const schedule = [
   },
   {
     event: "Midnight Snack",
-    start: new Date(year, month, endDay),
+    start: new Date(year, month, endDay, 0, 0),
     end: new Date(year, month, endDay, 0, 30),
   },
   {
@@ -148,13 +148,13 @@ function set_memo()
 	{
 		memo.innerHTML = "<h1 class='mem_message'><strong>CUhackit is loading...</strong></h1>";
 	}
-	else if (progress.during())
+	if (progress.during())
 	{
 		memo.innerHTML = "<h1 class='mem_message'><strong>Countdown to demos</strong></h1><img id='top_bug' \
           src='./resources/CUhackit_bw_small.svg' \
           alt='CUhackit'/>";
 	}
-	else
+	if (progress.after())
 	{
 		memo.innerHTML = "<h1 class='mem_message'><strong>Hack Complete</strong></h1>";
 	}
@@ -175,6 +175,7 @@ function set_events()
 
   for (var i = 0; i < schedule.length; i++)
   {
+    count = 0;
     if ( count < 4 &&
       currentTime() >= schedule[i].start 
       && currentTime() <= schedule[i].end)
@@ -182,8 +183,20 @@ function set_events()
       html_string += 
       `<div class="event"> \
           <h1 class="event_title"><strong>${schedule[i].event}</strong></h1> \
-          <p  class="event_time">${(schedule[i].start.getHours() > 12 ? schedule[i].start.getHours()%12 : schedule[i].start.getHours()) +":"+addZero(schedule[i].start.getMinutes())}-${(schedule[i].end.getHours() > 12 ? schedule[i].end.getHours()%12 : schedule[i].end.getHours())+":"+addZero(schedule[i].end.getMinutes())}</p> \
+          <p  class="event_time">${(
+            schedule[i].start.getHours() > 12 ? schedule[i].start.getHours()%12 : 
+            schedule[i].start.getHours() < 1 ? schedule[i].start.getHours()+12 : 
+            schedule[i].start.getHours()) 
+            +":"+addZero(schedule[i].start.getMinutes()
+          )}${schedule[i].end.getHours() == schedule[i].start.getHours() && schedule[i].start.getMinutes() == schedule[i].start.getMinutes() ? "" :
+            "-" + (schedule[i].end.getHours() > 12 ? schedule[i].end.getHours()%12 : 
+            schedule[i].start.getHours() < 1 ? schedule[i].start.getHours()+12 : 
+            schedule[i].end.getHours())
+            +":"+addZero(schedule[i].end.getMinutes())}</p> \
         </div>`;
+
+        console.log("Hello");
+        console.log(schedule[i].start.getHours());
         count ++;
     }
   }
@@ -219,10 +232,16 @@ function set_upcoming()
         `<div class="upcoming_event"> \
           <h1 class="event_title"><strong>${schedule[i].event}</strong></h1> \
           <p class="event_time">
-            ${(schedule[i].start.getHours() > 12 ? schedule[i].start.getHours()%12 : 
-              schedule[i].start.getHours())
-              +":"+
-              addZero(schedule[i].start.getMinutes())}-${((schedule[i].end.getHours() != schedule[i].start.getHours() && schedule[i].end.getMinutes() != schedule[i].start.getMinutes()) ? (schedule[i].end.getHours() > 12 ? schedule[i].end.getHours()%12 : schedule[i].end.getHours())+":"+addZero(schedule[i].end.getMinutes()) : ' ')}</p> \
+            ${(
+            schedule[i].start.getHours() > 12 ? schedule[i].start.getHours()%12 : 
+            schedule[i].start.getHours() < 1 ? schedule[i].start.getHours()+12 : 
+            schedule[i].start.getHours()) 
+            +":"+addZero(schedule[i].start.getMinutes()
+          )}${schedule[i].end.getHours() == schedule[i].start.getHours() && schedule[i].start.getMinutes() == schedule[i].start.getMinutes() ? "" :
+            "-" + (schedule[i].end.getHours() > 12 ? schedule[i].end.getHours()%12 : 
+            schedule[i].start.getHours() < 1 ? schedule[i].start.getHours()+12 : 
+            schedule[i].end.getHours())
+            +":"+addZero(schedule[i].end.getMinutes())}</p> \
         </div>`;
         count++;
       }
@@ -234,7 +253,6 @@ function set_upcoming()
 
 function main() {
   count = 0;
-	set_memo();
   set_events();
   set_upcoming();
   columns = get_columns();
@@ -255,11 +273,13 @@ function main() {
   }
   if (startTime() - currentTime() > -1000 && startTime() - currentTime() < 0)
   {
+    set_memo();
     window.location.reload(false);
   }
 
   if (endTime() - currentTime() > -1000 && endTime() - currentTime() < 0)
   {
+    set_memo();
     window.location.reload(false);
   }
 }
@@ -267,6 +287,7 @@ function main() {
 /*
   Runs above code
  */
+set_memo();
 main();
 
 

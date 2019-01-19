@@ -2,17 +2,23 @@
 * @Author: Charlie Gallentine
 * @Date:   2018-10-05 15:34:33
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-01-15 19:46:45
+* @Last Modified time: 2019-01-19 11:17:19
 */
 
-const year = new Date().getYear() + 1900;
-const month = new Date().getMonth();
-const day = new Date().getDate();
-const endDay = new Date().getDate()+1;
+// const year = new Date().getYear() + 1900;
+// const month = new Date().getMonth();
+// const day = new Date().getDate();
+// const endDay = new Date().getDate()+1;
 
 // const year = 2019;
 // const month = 0;
 // const day = 26;
+// const endDay = 27;
+
+const year = 2019;
+const month = 0;
+const day = 19;
+const endDay = 20;
 
 console.log(year);
 console.log(month);
