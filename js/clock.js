@@ -2,7 +2,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2018-10-05 15:34:33
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-01-19 11:17:19
+* @Last Modified time: 2019-01-21 14:12:32
 */
 
 // const year = new Date().getYear() + 1900;
@@ -17,15 +17,15 @@
 
 const year = 2019;
 const month = 0;
-const day = 19;
-const endDay = 20;
+const day = 21;
+const endDay = 22;
 
 console.log(year);
 console.log(month);
 console.log(day);
 
-const eventStartTime = 8;
-const eventEndTime = 14;
+const eventStartTime = 11;
+const eventEndTime = 12;
 const eventStartMinutes = 0;
 const eventEndMinutes = 0;
 
