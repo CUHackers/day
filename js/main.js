@@ -2,7 +2,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2018-10-08 11:50:43
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-01-19 11:32:19
+* @Last Modified time: 2019-01-21 14:10:00
 */
 
 // var startTime() = (new Date(year, month, day, eventStartTime, eventStartMinutes)).getTime();
@@ -156,7 +156,7 @@ function set_memo()
 	}
 	if (progress.after())
 	{
-		memo.innerHTML = "<h1 class='mem_message'><strong>Hack Complete</strong></h1>";
+		memo.innerHTML = "";
 	}
 }
 
