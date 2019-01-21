@@ -2,7 +2,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2018-10-05 15:34:33
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-01-21 14:12:32
+* @Last Modified time: 2019-01-21 14:17:47
 */
 
 // const year = new Date().getYear() + 1900;
@@ -10,15 +10,15 @@
 // const day = new Date().getDate();
 // const endDay = new Date().getDate()+1;
 
-// const year = 2019;
-// const month = 0;
-// const day = 26;
-// const endDay = 27;
-
 const year = 2019;
 const month = 0;
-const day = 21;
-const endDay = 22;
+const day = 26;
+const endDay = 27;
+
+// const year = 2019;
+// const month = 0;
+// const day = 21;
+// const endDay = 22;
 
 console.log(year);
 console.log(month);
@@ -50,7 +50,7 @@ function currentTime() {
   Return: integer, milliseconds since the epoch
  */
 function startTime() {
-  return (new Date(year, month, day, eventStartTime)).getTime();
+  return (new Date(year, month, day, eventStartTime, eventStartMinutes)).getTime();
 }
 
 /*
@@ -59,7 +59,7 @@ function startTime() {
   Return: integer, milliseconds since the epoch
  */
 function endTime() {
-  return (new Date(year, month, endDay, eventEndTime)).getTime();
+  return (new Date(year, month, endDay, eventEndTime, eventEndMinutes)).getTime();
 }
 
 

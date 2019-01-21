@@ -2,7 +2,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2018-10-08 11:50:43
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-01-21 14:10:00
+* @Last Modified time: 2019-01-21 14:14:54
 */
 
 // var startTime() = (new Date(year, month, day, eventStartTime, eventStartMinutes)).getTime();
@@ -146,7 +146,9 @@ function set_memo()
   const memo = document.getElementById("memo");
 	if (progress.before())
 	{
-		memo.innerHTML = "<h1 class='mem_message'><strong>CUhackit is loading...</strong></h1>";
+		memo.innerHTML = "<h1 class='mem_message'><strong>CUhackit is loading...</strong></h1><img id='top_bug' \
+          src='./resources/CUhackit_bw_small.svg' \
+          alt='CUhackit'/>";
 	}
 	if (progress.during())
 	{
@@ -199,15 +201,6 @@ function set_events()
         console.log(schedule[i].start.getHours());
         count ++;
     }
-  }
-  if (progress.before())
-  {
-    html_string += 
-      '<div>  \
-          <img  \
-            src="./resources/CUhackit_bw.svg" \
-            alt="CUhackit"/>  \
-        </div>';
   }
 
   document.getElementById("events").innerHTML = html_string;
