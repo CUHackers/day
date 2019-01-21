@@ -2,7 +2,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2018-10-05 15:34:33
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-01-21 14:17:47
+* @Last Modified time: 2019-01-21 14:31:38
 */
 
 // const year = new Date().getYear() + 1900;
@@ -117,16 +117,16 @@ var gridLineColor = "#FFF";
 function getCurrentGradient() {
   var gridTextGradient = ctx.createLinearGradient(0,0,0,height);
   if (progress.before()) {
-  	gridTextGradient.addColorStop(0, "#0016ff"); // old color here!
-  	gridTextGradient.addColorStop(1, "#01a"); // make this a darker one!
+  	gridTextGradient.addColorStop(0, "#555"); // old color here!
+  	gridTextGradient.addColorStop(1, "#DDD"); // make this a darker one!
   }
   else if (progress.during()) {
-  	gridTextGradient.addColorStop(0, "#AAA"); // old color here!
-  	gridTextGradient.addColorStop(1, "#AAA"); // make this a darker one!
+  	gridTextGradient.addColorStop(0, "#555"); // old color here!
+  	gridTextGradient.addColorStop(1, "#555"); // make this a darker one!
   }
   else {
-  	gridTextGradient.addColorStop(0, "#FDB92E"); // old color here!
-  	gridTextGradient.addColorStop(1, "#FDB92E"); // make this a darker one!
+  	gridTextGradient.addColorStop(0, "#333"); // old color here!
+  	gridTextGradient.addColorStop(1, "#333"); // make this a darker one!
   }
 
   return gridTextGradient;
