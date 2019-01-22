@@ -4,7 +4,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2018-10-08 11:50:43
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-01-22 13:36:32
+* @Last Modified time: 2019-01-22 14:12:47
 */
 
 // var startTime() = (new Date(year, month, day, eventStartTime, eventStartMinutes)).getTime();
@@ -141,21 +141,23 @@ function set_sessions(id_str, class_str)
     {
       html_string += 
       `<div class="${class_str}"> \
-        <div style="{display:inline-block}">
-          <h1 style="{display:block}" class="session_title"><strong>${sessions[i].session}</strong></h1> \
-          <h3 style="{display:block}" class="session_leader">${sessions[i].leader}</h3> \
+        <div style="display:inline-block;width:20px;">
+          <h1 style="display:block;" class="session_title"><strong>${sessions[i].session}</strong></h1> \
+          <h3 style="display:block;" class="session_leader">${sessions[i].leader}</h3> \
         </div>
-        <p class="session_reqs">${sessions[i].requirements == "None" ? "" : sessions[i].requirements}</p>
-        <p  class="event_time">${(
-          sessions[i].start.getHours() > 12 ? sessions[i].start.getHours()%12 : 
-          sessions[i].start.getHours() < 1 ? sessions[i].start.getHours()+12 : 
-          sessions[i].start.getHours()) 
-          +":"+addZero(sessions[i].start.getMinutes()
-        )}${sessions[i].end.getHours() == sessions[i].start.getHours() && sessions[i].start.getMinutes() == sessions[i].start.getMinutes() ? "" :
-          "-" + (sessions[i].end.getHours() > 12 ? sessions[i].end.getHours()%12 : 
-          sessions[i].start.getHours() < 1 ? sessions[i].start.getHours()+12 : 
-          sessions[i].end.getHours())
-          +":"+addZero(sessions[i].end.getMinutes())}</p> \
+        <div>
+          <p style="display:inline;" class="session_reqs">${sessions[i].requirements}</p>
+          <p style="display:inline;" class="event_time">${(
+            sessions[i].start.getHours() > 12 ? sessions[i].start.getHours()%12 : 
+            sessions[i].start.getHours() < 1 ? sessions[i].start.getHours()+12 : 
+            sessions[i].start.getHours()) 
+            +":"+addZero(sessions[i].start.getMinutes()
+          )}${sessions[i].end.getHours() == sessions[i].start.getHours() && sessions[i].start.getMinutes() == sessions[i].start.getMinutes() ? "" :
+            "-" + (sessions[i].end.getHours() > 12 ? sessions[i].end.getHours()%12 : 
+            sessions[i].start.getHours() < 1 ? sessions[i].start.getHours()+12 : 
+            sessions[i].end.getHours())
+            +":"+addZero(sessions[i].end.getMinutes())}</p> \
+        </div>
       </div>`;
 
       session_count++;
@@ -182,22 +184,23 @@ function set_upcoming_sessions(id_str, class_str)
     {
       html_string += 
       `<div class="${class_str}"> \
-        <div style="{display:inline-block}">
-          <h1 style="{display:block}" class="session_title"><strong>${sessions[i].session}</strong></h1> \
-          <h3 style="{display:block}" class="session_leader">${sessions[i].leader}</h3> \
+        <div style="display:inline-block;">
+          <h1 style="display:block;" class="session_title"><strong>${sessions[i].session}</strong></h1> \
+          <h3 style="display:block;" class="session_leader">${sessions[i].leader}</h3> \
         </div>
-        <p class="session_reqs">${sessions[i].requirements == "None" ? "" : sessions[i].requirements}</p> \
-        <p class="event_time">
-          ${(
-          sessions[i].start.getHours() > 12 ? sessions[i].start.getHours()%12 : 
-          sessions[i].start.getHours() < 1 ? sessions[i].start.getHours()+12 : 
-          sessions[i].start.getHours()) 
-          +":"+addZero(sessions[i].start.getMinutes()
-        )}${sessions[i].end.getHours() == sessions[i].start.getHours() && sessions[i].start.getMinutes() == sessions[i].start.getMinutes() ? "" :
-          "-" + (sessions[i].end.getHours() > 12 ? sessions[i].end.getHours()%12 : 
-          sessions[i].start.getHours() < 1 ? sessions[i].start.getHours()+12 : 
-          sessions[i].end.getHours())
-          +":"+addZero(sessions[i].end.getMinutes())}</p> \
+        <div style="display:inline-block;text-align:right;">
+          <p style="display:inline-block;" class="session_reqs">${sessions[i].requirements}</p>
+          <p style="display:inline-block;" class="event_time">${(
+            sessions[i].start.getHours() > 12 ? sessions[i].start.getHours()%12 : 
+            sessions[i].start.getHours() < 1 ? sessions[i].start.getHours()+12 : 
+            sessions[i].start.getHours()) 
+            +":"+addZero(sessions[i].start.getMinutes()
+          )}${sessions[i].end.getHours() == sessions[i].start.getHours() && sessions[i].start.getMinutes() == sessions[i].start.getMinutes() ? "" :
+            "-" + (sessions[i].end.getHours() > 12 ? sessions[i].end.getHours()%12 : 
+            sessions[i].start.getHours() < 1 ? sessions[i].start.getHours()+12 : 
+            sessions[i].end.getHours())
+            +":"+addZero(sessions[i].end.getMinutes())}</p> \
+        </div>
       </div>`;
       session_count++;
     }

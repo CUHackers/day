@@ -2,7 +2,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2019-01-22 13:35:44
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-01-22 13:36:27
+* @Last Modified time: 2019-01-22 13:59:15
 */
 function get_sessions() {
 	const sessions = [
@@ -18,14 +18,14 @@ function get_sessions() {
 	    start: new Date(year, month, day, 11),
 	    end: new Date(year, month, day, 11, 30),
 	    leader: "Dr. Matt Boyer",
-	    requirements: "None",
+	    requirements: "",
 	  },
 	  {
 	    session: "Intro to Design Thinking",
 	    start: new Date(year, month, day, 11, 30),
 	    end: new Date(year, month, day, 12),
 	    leader: "Dr. Matt Boyer",
-	    requirements: "None",
+	    requirements: "",
 	  },
 	  {
 	    session: "Designing the User Experience",
@@ -39,28 +39,28 @@ function get_sessions() {
 	    start: new Date(year, month, day, 12, 15),
 	    end: new Date(year, month, day, 13),
 	    leader: "Audrey Vincent",
-	    requirements: "None",
+	    requirements: "",
 	  },
 	  {
 	    session: "Intro to HTML/CSS/JS Web Dev Basics",
 	    start: new Date(year, month, day, 13, 15),
 	    end: new Date(year, month, day, 14),
 	    leader: "Ayush Petigara",
-	    requirements: "None",
+	    requirements: "",
 	  },
 	  {
 	    session: "Intro to Flask/Python",
 	    start: new Date(year, month, day, 14, 15),
 	    end: new Date(year, month, day, 15),
 	    leader: "Jeff Rubillo",
-	    requirements: "None",
+	    requirements: "",
 	  },
 	  {
 	    session: "Intro to Arduino",
 	    start: new Date(year, month, day, 13, 15),
 	    end: new Date(year, month, day, 14),
 	    leader: "TBD",
-	    requirements: "None",
+	    requirements: "",
 	  },
 	  {
 	    session: "Intro to Unity",
@@ -74,14 +74,14 @@ function get_sessions() {
 	    start: new Date(year, month, day, 15, 15),
 	    end: new Date(year, month, day, 16),
 	    leader: "Colin Targonski, Ben Shealy",
-	    requirements: "None",
+	    requirements: "",
 	  },
 	  {
 	    session: "Intro to Go",
 	    start: new Date(year, month, day, 17, 15),
 	    end: new Date(year, month, day, 18),
 	    leader: "Patrick Gorospe",
-	    requirements: "None",
+	    requirements: "",
 	  },
 	  {
 	    session: "A Deep Learning Blitz w/ PyTorch",
@@ -102,21 +102,21 @@ function get_sessions() {
 	    start: new Date(year, month, day, 18, 15),
 	    end: new Date(year, month, day, 19),
 	    leader: "Ben Shealy",
-	    requirements: "None",
+	    requirements: "",
 	  },
 	  {
 	    session: "Data Visualization w/JPL (NASA)",
 	    start: new Date(year, month, day, 18, 15),
 	    end: new Date(year, month, day, 19),
 	    leader: "Elizabeth Hill",
-	    requirements: "None",
+	    requirements: "",
 	  },
 	  {
 	    session: "Web Scraping w/Python",
 	    start: new Date(year, month, day, 15, 15),
 	    end: new Date(year, month, day, 16),
 	    leader: "Chris Lambert",
-	    requirements: "None",
+	    requirements: "",
 	  },
 	  {
 	    session: "AWS Artificial Intelligence/Machine Learning",
@@ -130,7 +130,7 @@ function get_sessions() {
 	    start: new Date(year, month, day, 14, 15),
 	    end: new Date(year, month, day, 15),
 	    leader: "GCP Team",
-	    requirements: "None",
+	    requirements: "",
 	  },
 	  {
 	    session: "Hotdog Not Hotdog with AWS",
@@ -144,7 +144,7 @@ function get_sessions() {
 	    start: new Date(year, month, day, 19, 15),
 	    end: new Date(year, month, day, 20),
 	    leader: "Dr. Alex Feltus",
-	    requirements: "None",
+	    requirements: "",
 	  },
 	];
 
