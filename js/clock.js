@@ -2,7 +2,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2018-10-05 15:34:33
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-01-21 14:31:38
+* @Last Modified time: 2019-01-22 12:31:12
 */
 
 // const year = new Date().getYear() + 1900;
@@ -12,8 +12,8 @@
 
 const year = 2019;
 const month = 0;
-const day = 26;
-const endDay = 27;
+const day = 22;
+const endDay = 23;
 
 // const year = 2019;
 // const month = 0;
