@@ -1,132 +1,19 @@
+/* jshint esversion:6*/
+
 /*
 * @Author: Charlie Gallentine
 * @Date:   2018-10-08 11:50:43
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-01-21 14:14:54
+* @Last Modified time: 2019-01-22 14:12:47
 */
 
 // var startTime() = (new Date(year, month, day, eventStartTime, eventStartMinutes)).getTime();
 // var endTime() = (new Date(year, month, day, eventEndTime)).getTime();
-let count = 0;
+let event_count = 0;
+let session_count = 0;
 
-const schedule = [
-  {
-    event: "Mentor orientation",
-    start: new Date(year, month, day, 8, 30),
-    end: new Date(year, month, day, 9),
-  },
-  {
-    event: "Participant check-in",
-    start: new Date(year, month, day, 9),
-    end: new Date(year, month, day, 10, 30),
-  },
-  {
-    event: "Opening Ceremony",
-    start: new Date(year, month, day, 10, 30),
-    end: new Date(year, month, day, 11),
-  },
-  {
-    event: "HACKING BEGINS!",
-    start: new Date(year, month, day, 11),
-    end: new Date(year, month, day, 11),
-  },
-  {
-    event: "Workshops begin",
-    start: new Date(year, month, day, 11),
-    end: new Date(year, month, day, 11),
-  },
-  {
-    event: "Lunch",
-    start: new Date(year, month, day, 12),
-    end: new Date(year, month, day, 13),
-  },
-  {
-    event: "Smash Bros",
-    start: new Date(year, month, day, 13),
-    end: new Date(year, month, day, 14),
-  },
-  {
-    event: "Headshots",
-    start: new Date(year, month, day, 13),
-    end: new Date(year, month, day, 15),
-  },
-  {
-    event: "Immersive Space opens",
-    start: new Date(year, month, day, 14),
-    end: new Date(year, month, day, 14),
-  },
-  {
-    event: "King of Pops",
-    start: new Date(year, month, day, 16),
-    end: new Date(year, month, day, 17),
-  },
-  {
-    event: "Lightning Pops",
-    start: new Date(year, month, day, 16),
-    end: new Date(year, month, day, 17),
-  },
-  {
-    event: "Dinner",
-    start: new Date(year, month, day, 18),
-    end: new Date(year, month, day, 19),
-  },
-  {
-    event: "Snake",
-    start: new Date(year, month, day, 19),
-    end: new Date(year, month, day, 20),
-  },
-  {
-    event: "Cup Stacking",
-    start: new Date(year, month, day, 20),
-    end: new Date(year, month, day, 20, 30),
-  },
-  {
-    event: "Sleep rooms",
-    start: new Date(year, month, day, 22),
-    end: new Date(year, month, day, 22),
-  },
-  {
-    event: "Mid-way hype",
-    start: new Date(year, month, day, 23),
-    end: new Date(year, month, day, 23),
-  },
-  {
-    event: "Midnight Snack",
-    start: new Date(year, month, endDay, 0, 0),
-    end: new Date(year, month, endDay, 0, 30),
-  },
-  {
-    event: "Yoga",
-    start: new Date(year, month, endDay, 1),
-    end: new Date(year, month, endDay, 1, 30),
-  },
-  {
-    event: "Breakfast",
-    start: new Date(year, month, endDay, 6),
-    end: new Date(year, month, endDay, 7),
-  },
-  {
-    event: "Hacking ends",
-    start: new Date(year, month, endDay, 11),
-    end: new Date(year, month, endDay, 11),
-  },
-  {
-    event: "DevPost closes",
-    start: new Date(year, month, endDay, 11, 30),
-    end: new Date(year, month, endDay, 11, 30),
-  },
-  {
-    event: "Demos and Judging",
-    start: new Date(year, month, endDay, 12),
-    end: new Date(year, month, endDay, 13, 45),
-  },
-  {
-    event: "Closing Ceremony",
-    start: new Date(year, month, endDay, 14),
-    end: new Date(year, month, endDay, 15),
-  },
-];
-
+const schedule = get_schedule();
+const sessions = get_sessions();
 
 // Object containing boolean key:value pairs concerning event progress
 var progress = {
@@ -169,21 +56,21 @@ function addZero(i) {
     return i;
 }
 
-function set_events()
+function set_events(id_str, class_str)
 {
-  const events = document.getElementById("events");
+  const events = document.getElementById(id_str);
   events.innerHTML = "";
   var html_string = "";
+  event_count = 0;
 
   for (var i = 0; i < schedule.length; i++)
   {
-    count = 0;
-    if ( count < 4 &&
+    if ( event_count < 6 &&
       currentTime() >= schedule[i].start 
       && currentTime() <= schedule[i].end)
     {
       html_string += 
-      `<div class="event"> \
+      `<div class="${class_str}"> \
           <h1 class="event_title"><strong>${schedule[i].event}</strong></h1> \
           <p  class="event_time">${(
             schedule[i].start.getHours() > 12 ? schedule[i].start.getHours()%12 : 
@@ -197,57 +84,139 @@ function set_events()
             +":"+addZero(schedule[i].end.getMinutes())}</p> \
         </div>`;
 
-        console.log("Hello");
-        console.log(schedule[i].start.getHours());
-        count ++;
+        event_count ++;
     }
   }
 
-  document.getElementById("events").innerHTML = html_string;
+  document.getElementById(id_str).innerHTML = html_string;
 }
 
-function set_upcoming()
+function set_upcoming(id_str, class_str)
 {
-  const upcoming = document.getElementById("upcoming");
+  const upcoming = document.getElementById(id_str);
   upcoming.innerHTML = "";
   var html_string = "";
 
-  if (true)
+  for (var i = 0; i < schedule.length; i++)
   {
-    for (var i = 0; i < schedule.length; i++)
+    if ( event_count < 6 &&
+      // If an event is less than an hour away, update screen
+      (schedule[i].start - currentTime()) / 3600000 < 1000
+      && schedule[i].start - currentTime() > 0) 
     {
-      if ( count < 4 &&
-        // If an event is less than an hour away, update screen
-        (schedule[i].start - currentTime()) / 3600000 < 1000
-        && schedule[i].start - currentTime() > 0) 
-      {
-        html_string += 
-        `<div class="upcoming_event"> \
-          <h1 class="event_title"><strong>${schedule[i].event}</strong></h1> \
-          <p class="event_time">
-            ${(
-            schedule[i].start.getHours() > 12 ? schedule[i].start.getHours()%12 : 
-            schedule[i].start.getHours() < 1 ? schedule[i].start.getHours()+12 : 
-            schedule[i].start.getHours()) 
-            +":"+addZero(schedule[i].start.getMinutes()
-          )}${schedule[i].end.getHours() == schedule[i].start.getHours() && schedule[i].start.getMinutes() == schedule[i].start.getMinutes() ? "" :
-            "-" + (schedule[i].end.getHours() > 12 ? schedule[i].end.getHours()%12 : 
-            schedule[i].start.getHours() < 1 ? schedule[i].start.getHours()+12 : 
-            schedule[i].end.getHours())
-            +":"+addZero(schedule[i].end.getMinutes())}</p> \
-        </div>`;
-        count++;
-      }
+      html_string += 
+      `<div class="${class_str}"> \
+        <h1 class="event_title"><strong>${schedule[i].event}</strong></h1> \
+        <p class="event_time">
+          ${(
+          schedule[i].start.getHours() > 12 ? schedule[i].start.getHours()%12 : 
+          schedule[i].start.getHours() < 1 ? schedule[i].start.getHours()+12 : 
+          schedule[i].start.getHours()) 
+          +":"+addZero(schedule[i].start.getMinutes()
+        )}${schedule[i].end.getHours() == schedule[i].start.getHours() && schedule[i].start.getMinutes() == schedule[i].start.getMinutes() ? "" :
+          "-" + (schedule[i].end.getHours() > 12 ? schedule[i].end.getHours()%12 : 
+          schedule[i].start.getHours() < 1 ? schedule[i].start.getHours()+12 : 
+          schedule[i].end.getHours())
+          +":"+addZero(schedule[i].end.getMinutes())}</p> \
+      </div>`;
+      event_count++;
     }
   }
 
-  document.getElementById("upcoming").innerHTML = html_string;
+  document.getElementById(id_str).innerHTML = html_string;
+}
+
+function set_sessions(id_str, class_str)
+{
+  const events = document.getElementById(id_str);
+  events.innerHTML = "";
+  var html_string = "";
+  session_count = 0; 
+
+  for (var i = 0; i < sessions.length; i++)
+  {
+    if ( session_count < 6 &&
+      currentTime() >= sessions[i].start 
+      && currentTime() <= sessions[i].end)
+    {
+      html_string += 
+      `<div class="${class_str}"> \
+        <div style="display:inline-block;width:20px;">
+          <h1 style="display:block;" class="session_title"><strong>${sessions[i].session}</strong></h1> \
+          <h3 style="display:block;" class="session_leader">${sessions[i].leader}</h3> \
+        </div>
+        <div>
+          <p style="display:inline;" class="session_reqs">${sessions[i].requirements}</p>
+          <p style="display:inline;" class="event_time">${(
+            sessions[i].start.getHours() > 12 ? sessions[i].start.getHours()%12 : 
+            sessions[i].start.getHours() < 1 ? sessions[i].start.getHours()+12 : 
+            sessions[i].start.getHours()) 
+            +":"+addZero(sessions[i].start.getMinutes()
+          )}${sessions[i].end.getHours() == sessions[i].start.getHours() && sessions[i].start.getMinutes() == sessions[i].start.getMinutes() ? "" :
+            "-" + (sessions[i].end.getHours() > 12 ? sessions[i].end.getHours()%12 : 
+            sessions[i].start.getHours() < 1 ? sessions[i].start.getHours()+12 : 
+            sessions[i].end.getHours())
+            +":"+addZero(sessions[i].end.getMinutes())}</p> \
+        </div>
+      </div>`;
+
+      session_count++;
+      console.log("SESSION COUNT");
+      console.log(session_count);
+    }
+  }
+
+  document.getElementById(id_str).innerHTML = html_string;
+}
+
+function set_upcoming_sessions(id_str, class_str)
+{
+  const upcoming = document.getElementById(id_str);
+  upcoming.innerHTML = "";
+  var html_string = "";
+
+  for (var i = 0; i < sessions.length; i++)
+  {
+    if ( session_count < 6 &&
+      // If an event is less than an hour away, update screen
+      (sessions[i].start - currentTime()) / 3600000 < 1000
+      && sessions[i].start - currentTime() > 0) 
+    {
+      html_string += 
+      `<div class="${class_str}"> \
+        <div style="display:inline-block;">
+          <h1 style="display:block;" class="session_title"><strong>${sessions[i].session}</strong></h1> \
+          <h3 style="display:block;" class="session_leader">${sessions[i].leader}</h3> \
+        </div>
+        <div style="display:inline-block;text-align:right;">
+          <p style="display:inline-block;" class="session_reqs">${sessions[i].requirements}</p>
+          <p style="display:inline-block;" class="event_time">${(
+            sessions[i].start.getHours() > 12 ? sessions[i].start.getHours()%12 : 
+            sessions[i].start.getHours() < 1 ? sessions[i].start.getHours()+12 : 
+            sessions[i].start.getHours()) 
+            +":"+addZero(sessions[i].start.getMinutes()
+          )}${sessions[i].end.getHours() == sessions[i].start.getHours() && sessions[i].start.getMinutes() == sessions[i].start.getMinutes() ? "" :
+            "-" + (sessions[i].end.getHours() > 12 ? sessions[i].end.getHours()%12 : 
+            sessions[i].start.getHours() < 1 ? sessions[i].start.getHours()+12 : 
+            sessions[i].end.getHours())
+            +":"+addZero(sessions[i].end.getMinutes())}</p> \
+        </div>
+      </div>`;
+      session_count++;
+    }
+  }
+
+  document.getElementById(id_str).innerHTML = html_string;
 }
 
 function main() {
   count = 0;
-  set_events();
-  set_upcoming();
+  set_events("events", "event");
+  set_upcoming("upcoming_events", "upcoming_event");
+
+  set_sessions("sessions", "event");
+  set_upcoming_sessions("upcoming_sessions", "upcoming_event");
+
   columns = get_columns();
   space = get_space();
   digit = get_digit();

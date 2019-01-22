@@ -2,7 +2,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2018-10-05 15:40:42
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-01-15 19:03:55
+* @Last Modified time: 2019-01-22 13:55:57
 */
 
 * {
@@ -11,9 +11,25 @@
 	padding: 0;
 }
 
+#schedule_container {
+	display: flex;
+	justify-content: space-around;
+	flex-direction: row;
+}
+
+.schedule_block {
+	display: inline-block;
+	width: 45%;
+}
+
 .section {
 	margin: 0 auto;
 	width: 50%;
+}
+
+.section_events {
+	margin: 0;
+	width: 100%;
 }
 
 #memo {
@@ -55,6 +71,32 @@
 	font-size:74px;
 	margin: auto 0;
 	padding: 20px 30px 0 30px;
+}
+
+.event {
+	align-items: flex-end;
+	background-color: black;
+	color: white;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 30px;
+}
+
+.session_title {
+	font-size:56px;
+	margin: auto 0;
+	padding: 20px 10px 0 30px;
+}
+
+.session_leader {
+	font-size:32px;
+	margin: auto 0;
+	padding: 0 30px 0 30px;
+}
+
+.session_reqs {
+	font-size: 42px;
+	margin: auto 0;
 }
 
 .event_time {
