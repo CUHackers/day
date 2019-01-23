@@ -2,7 +2,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2018-10-05 15:40:42
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-01-23 10:36:03
+* @Last Modified time: 2019-01-23 10:57:07
 */
 
 * {
@@ -15,6 +15,11 @@ body {
 	overflow: hidden;
 }
 
+.partner_logo {
+	max-height: 3vh;
+	margin-top: 15px;
+}
+
 #main_container {
 	display: flex;
 	flex-direction: column;
@@ -23,6 +28,7 @@ body {
 #partners {
 	border-top: 1px solid black;
 	display: flex;
+	justify-content: space-around;
 }
 
 #logo {
@@ -48,7 +54,7 @@ body {
 	overflow-y: scroll;
 	display: inline-block;
 	width: 40%;
-	height: 85vh;
+	height: 90vh;
 	padding-bottom: -400px;
 }
 
