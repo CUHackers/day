@@ -2,7 +2,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2018-10-05 15:34:33
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-01-23 10:39:57
+* @Last Modified time: 2019-01-23 11:50:23
 */
 
 // const year = new Date().getYear() + 1900;
@@ -121,8 +121,8 @@ function getCurrentGradient() {
   	gridTextGradient.addColorStop(1, "#DDD"); // make this a darker one!
   }
   else if (progress.during()) {
-  	gridTextGradient.addColorStop(0, "#555"); // old color here!
-  	gridTextGradient.addColorStop(1, "#555"); // make this a darker one!
+  	gridTextGradient.addColorStop(0, "#222"); // old color here!
+  	gridTextGradient.addColorStop(1, "#222"); // make this a darker one!
   }
   else {
   	gridTextGradient.addColorStop(0, "#333"); // old color here!
