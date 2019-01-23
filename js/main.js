@@ -4,7 +4,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2018-10-08 11:50:43
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-01-23 12:28:38
+* @Last Modified time: 2019-01-23 12:32:29
 */
 
 // var startTime() = (new Date(year, month, day, eventStartTime, eventStartMinutes)).getTime();
@@ -189,7 +189,7 @@ function set_upcoming_sessions(id_str, class_str)
         <div style="display:inline-block;">
           <h1 style="display:block;" class="session_title"><strong>${sessions[i].session}</strong></h1> \
           <h3 style="display:block;" class="session_leader">${sessions[i].leader}</h3> \
-          <p style="display:inline-block;" class="session_reqs">${sessions[i].requirements == "" ? "" : "Reqs: " } ${sessions[i].requirements}</p>\
+          <p style="display:inline-block;margin-left:30px;" class="session_reqs">${sessions[i].requirements == "" ? "" : "Reqs: " } ${sessions[i].requirements}</p>\
         </div>
         <div style="display:inline-block;text-align:right;">
           <p style="display:inline-block;" class="event_time">${(
