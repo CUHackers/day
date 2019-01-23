@@ -2,7 +2,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2019-01-22 13:32:01
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-01-22 13:35:21
+* @Last Modified time: 2019-01-23 12:05:01
 */
 
 function get_schedule() {
@@ -81,11 +81,6 @@ function get_schedule() {
 	    event: "Sleep rooms",
 	    start: new Date(year, month, day, 22),
 	    end: new Date(year, month, day, 22),
-	  },
-	  {
-	    event: "Mid-way hype",
-	    start: new Date(year, month, day, 23),
-	    end: new Date(year, month, day, 23),
 	  },
 	  {
 	    event: "Midnight Snack",
