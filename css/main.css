@@ -2,7 +2,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2018-10-05 15:40:42
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-01-22 13:55:57
+* @Last Modified time: 2019-01-23 11:52:20
 */
 
 * {
@@ -11,20 +11,82 @@
 	padding: 0;
 }
 
-#schedule_container {
+body {
+	overflow: hidden;
+}
+
+.link {
+	border: 1px solid black;
+	border-radius: 3px;
+	font-size: 24px;
+	color: black;
+	background-color: white;
+	padding: 10px;
+}
+
+.partner_logo {
+	max-height: 3vh;
+	margin-top: 15px;
+}
+
+#main_container {
+	display: flex;
+	flex-direction: column;
+}
+
+#partners {
+	border-top: 1px solid black;
 	display: flex;
 	justify-content: space-around;
+	height: 15vh;
+}
+
+#logo {
+	width: 100%;
+}
+
+.links_block {
+	padding-top: 25vh;
+	padding-bottom: 25vh;
+	text-align: center;
+}
+
+#schedule_container {
+	display: flex;
 	flex-direction: row;
 }
 
+.links_block {
+	width: 19%;
+	background: linear-gradient(145deg, #aaa, 80%, #E80000);
+}
+
 .schedule_block {
+	border-left: 1px solid black;
+	overflow-y: scroll;
 	display: inline-block;
-	width: 45%;
+	width: 40%;
+	height: 90vh;
+	padding-bottom: -400px;
 }
 
 .section {
-	margin: 0 auto;
 	width: 50%;
+}
+
+#events {
+	padding-top: 22vh;
+}
+
+#clockContainer {
+	background: white;
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
+	padding: 10px;
+	width: 58%;
+	height: 20vh;
+	position: fixed;
+	z-index: 1000;
 }
 
 .section_events {
@@ -42,13 +104,8 @@
 
 #clock {
 	width: 100%;
-	height: 10vw;
-	margin-bottom: 40px
-}
-
-#top_bug {
-	width: 250px;
-	margin-right: -14px;
+	height: auto;
+	max-height: 20vh;
 }
 
 .mem_message {
@@ -60,60 +117,93 @@
 
 .event {
 	align-items: flex-end;
-	background-color: black;
+	background: linear-gradient(45deg, #E80000, #0016FF);
 	color: white;
 	display: flex;
 	justify-content: space-between;
-	margin-top: 30px;
+	/*margin-top: 30px;*/
+}
+
+.session {
+	align-items: flex-end;
+	background: linear-gradient(45deg, #E80000, #721ED6);
+	color: white;
+	display: flex;
+	justify-content: space-between;
+	/*margin-top: 30px;*/
 }
 
 .event_title {
-	font-size:74px;
+	font-size:24px;
 	margin: auto 0;
-	padding: 20px 30px 0 30px;
-}
-
-.event {
-	align-items: flex-end;
-	background-color: black;
-	color: white;
-	display: flex;
-	justify-content: space-between;
-	margin-top: 30px;
+	padding: 20px 30px 10px 30px;
 }
 
 .session_title {
-	font-size:56px;
+	font-size:24px;
 	margin: auto 0;
 	padding: 20px 10px 0 30px;
 }
 
 .session_leader {
-	font-size:32px;
+	font-size:12px;
 	margin: auto 0;
-	padding: 0 30px 0 30px;
+	padding: 0 30px 10px 30px;
 }
 
 .session_reqs {
-	font-size: 42px;
+	font-size: 12px;
 	margin: auto 0;
 }
 
 .event_time {
-	font-size: 42px;
+	font-size: 16px;
 	margin-right: 15px;
 	padding-bottom: 8px;
 }
 
 .upcoming_event {
-	background-color: #aaa;
+	background: linear-gradient(145deg, #aaa, #0016FF);
 	align-items: flex-end;
 	color: white;
 	display: flex;
 	justify-content: space-between;
-	margin-top: 30px;
+	/*margin-top: 5px;*/
+}
+
+.upcoming_session {
+	background: linear-gradient(145deg, #aaa, #721ED6);
+	align-items: flex-end;
+	color: white;
+	display: flex;
+	justify-content: space-between;
+	/*margin-top: 5px;*/
 }
 
 .row {
 	border: 2px solid black;
+}
+
+@media (min-width: 1560px)
+{
+	.event_title {
+		font-size:74px;
+	}
+
+	.session_title {
+		font-size: 56px;
+	}
+
+	.event_time {
+		font-size: 42px;
+	}
+
+	.session_leader {
+		font-size: 32px;
+	}
+
+	.session_reqs {
+		font-size: 42px;
+	}
+
 }
