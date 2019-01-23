@@ -2,7 +2,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2018-10-05 15:40:42
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-01-23 12:23:51
+* @Last Modified time: 2019-01-23 12:41:42
 */
 
 * {
@@ -22,6 +22,8 @@ body {
 	color: black;
 	background-color: white;
 	padding: 10px;
+	margin-bottom: 15px;
+	width: 50%;
 }
 
 .partner_logo {
