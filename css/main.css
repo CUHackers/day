@@ -2,7 +2,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2018-10-05 15:40:42
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-01-23 10:57:07
+* @Last Modified time: 2019-01-23 11:31:40
 */
 
 * {
@@ -64,6 +64,7 @@ body {
 
 #events {
 	padding-top: 20vh;
+
 }
 
 #clockContainer {
@@ -105,20 +106,20 @@ body {
 
 .event {
 	align-items: flex-end;
-	background-color: black;
+	background: linear-gradient(45deg, #E80000, #0016FF);
 	color: white;
 	display: flex;
 	justify-content: space-between;
-	margin-top: 30px;
+	/*margin-top: 30px;*/
 }
 
-.event {
+.session {
 	align-items: flex-end;
-	background-color: black;
+	background: linear-gradient(45deg, #E80000, #721ED6);
 	color: white;
 	display: flex;
 	justify-content: space-between;
-	margin-top: 30px;
+	/*margin-top: 30px;*/
 }
 
 .event_title {
@@ -151,12 +152,21 @@ body {
 }
 
 .upcoming_event {
-	background-color: #aaa;
+	background: linear-gradient(145deg, #aaa, #0016FF);
 	align-items: flex-end;
 	color: white;
 	display: flex;
 	justify-content: space-between;
-	margin-top: 30px;
+	margin-top: 5px;
+}
+
+.upcoming_session {
+	background: linear-gradient(145deg, #aaa, #721ED6);
+	align-items: flex-end;
+	color: white;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 5px;
 }
 
 .row {

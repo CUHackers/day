@@ -4,7 +4,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2018-10-08 11:50:43
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-01-23 10:26:40
+* @Last Modified time: 2019-01-23 11:20:50
 */
 
 // var startTime() = (new Date(year, month, day, eventStartTime, eventStartMinutes)).getTime();
@@ -216,8 +216,8 @@ function main() {
   set_events("events", "event");
   set_upcoming("upcoming_events", "upcoming_event");
 
-  set_sessions("sessions", "event");
-  set_upcoming_sessions("upcoming_sessions", "upcoming_event");
+  set_sessions("sessions", "session");
+  set_upcoming_sessions("upcoming_sessions", "upcoming_session");
 
   columns = get_columns();
   space = get_space();
