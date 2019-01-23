@@ -2,7 +2,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2018-10-05 15:34:33
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-01-23 11:50:23
+* @Last Modified time: 2019-01-23 12:53:43
 */
 
 // const year = new Date().getYear() + 1900;
@@ -12,8 +12,8 @@
 
 const year = 2019;
 const month = 0;
-const day = 23;
-const endDay = 24;
+const day = 26;
+const endDay = 27;
 
 // const year = 2019;
 // const month = 0;
@@ -24,10 +24,10 @@ console.log(year);
 console.log(month);
 console.log(day);
 
-const eventStartTime = 10;
-const eventEndTime = 10;
-const eventStartMinutes = 39;
-const eventEndMinutes = 40;
+const eventStartTime = 11;
+const eventEndTime = 11;
+const eventStartMinutes = 0;
+const eventEndMinutes = 0;
 
 // var startTime = (new Date(year, month, day, eventStartTime)).getTime();
 // var endTime = (new Date(year, month, day, eventEndTime)).getTime();
