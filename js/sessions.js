@@ -2,7 +2,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2019-01-22 13:35:44
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-01-22 13:59:15
+* @Last Modified time: 2019-01-23 12:51:29
 */
 function get_sessions() {
 	const sessions = [
