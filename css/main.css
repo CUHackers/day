@@ -2,7 +2,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2018-10-05 15:40:42
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-01-22 13:55:57
+* @Last Modified time: 2019-01-23 09:08:05
 */
 
 * {
@@ -18,12 +18,19 @@
 }
 
 .schedule_block {
+	overflow: scroll;
 	display: inline-block;
 	width: 45%;
 }
 
 .section {
-	margin: 0 auto;
+	width: 50%;
+}
+
+#clockContainer {
+	border-bottom: 2px solid black;
+	border-right: 2px solid black;
+	padding: 10px;
 	width: 50%;
 }
 
@@ -43,7 +50,6 @@
 #clock {
 	width: 100%;
 	height: 10vw;
-	margin-bottom: 40px
 }
 
 #top_bug {
@@ -67,12 +73,6 @@
 	margin-top: 30px;
 }
 
-.event_title {
-	font-size:74px;
-	margin: auto 0;
-	padding: 20px 30px 0 30px;
-}
-
 .event {
 	align-items: flex-end;
 	background-color: black;
@@ -82,25 +82,31 @@
 	margin-top: 30px;
 }
 
+.event_title {
+	font-size:24px;
+	margin: auto 0;
+	padding: 20px 30px 0 30px;
+}
+
 .session_title {
-	font-size:56px;
+	font-size:24px;
 	margin: auto 0;
 	padding: 20px 10px 0 30px;
 }
 
 .session_leader {
-	font-size:32px;
+	font-size:12px;
 	margin: auto 0;
-	padding: 0 30px 0 30px;
+	padding: 0 30px 10px 30px;
 }
 
 .session_reqs {
-	font-size: 42px;
+	font-size: 12px;
 	margin: auto 0;
 }
 
 .event_time {
-	font-size: 42px;
+	font-size: 16px;
 	margin-right: 15px;
 	padding-bottom: 8px;
 }
@@ -116,4 +122,28 @@
 
 .row {
 	border: 2px solid black;
+}
+
+@media (min-width: 1560px)
+{
+	.event_title {
+		font-size:74px;
+	}
+
+	.session_title {
+		font-size: 56px;
+	}
+
+	.event_time {
+		font-size: 42px;
+	}
+
+	.session_leader {
+		font-size: 32px;
+	}
+
+	.session_reqs {
+		font-size: 42px;
+	}
+
 }

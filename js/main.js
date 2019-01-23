@@ -4,13 +4,15 @@
 * @Author: Charlie Gallentine
 * @Date:   2018-10-08 11:50:43
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-01-22 14:12:47
+* @Last Modified time: 2019-01-23 09:03:55
 */
 
 // var startTime() = (new Date(year, month, day, eventStartTime, eventStartMinutes)).getTime();
 // var endTime() = (new Date(year, month, day, eventEndTime)).getTime();
 let event_count = 0;
 let session_count = 0;
+
+const MAX_DISPLAY = 30;
 
 const schedule = get_schedule();
 const sessions = get_sessions();
@@ -65,7 +67,7 @@ function set_events(id_str, class_str)
 
   for (var i = 0; i < schedule.length; i++)
   {
-    if ( event_count < 6 &&
+    if ( event_count < MAX_DISPLAY &&
       currentTime() >= schedule[i].start 
       && currentTime() <= schedule[i].end)
     {
@@ -99,7 +101,7 @@ function set_upcoming(id_str, class_str)
 
   for (var i = 0; i < schedule.length; i++)
   {
-    if ( event_count < 6 &&
+    if ( event_count < MAX_DISPLAY &&
       // If an event is less than an hour away, update screen
       (schedule[i].start - currentTime()) / 3600000 < 1000
       && schedule[i].start - currentTime() > 0) 
@@ -135,7 +137,7 @@ function set_sessions(id_str, class_str)
 
   for (var i = 0; i < sessions.length; i++)
   {
-    if ( session_count < 6 &&
+    if ( session_count < MAX_DISPLAY &&
       currentTime() >= sessions[i].start 
       && currentTime() <= sessions[i].end)
     {
@@ -177,7 +179,7 @@ function set_upcoming_sessions(id_str, class_str)
 
   for (var i = 0; i < sessions.length; i++)
   {
-    if ( session_count < 6 &&
+    if ( session_count < MAX_DISPLAY &&
       // If an event is less than an hour away, update screen
       (sessions[i].start - currentTime()) / 3600000 < 1000
       && sessions[i].start - currentTime() > 0) 
@@ -235,13 +237,13 @@ function main() {
   }
   if (startTime() - currentTime() > -1000 && startTime() - currentTime() < 0)
   {
-    set_memo();
+    // set_memo();
     window.location.reload(false);
   }
 
   if (endTime() - currentTime() > -1000 && endTime() - currentTime() < 0)
   {
-    set_memo();
+    // set_memo();
     window.location.reload(false);
   }
 }
@@ -249,7 +251,7 @@ function main() {
 /*
   Runs above code
  */
-set_memo();
+// set_memo();
 main();
 
 
